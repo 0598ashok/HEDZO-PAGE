@@ -15,8 +15,8 @@
     const h = Math.round(rect.height);
     if (w === 0 || h === 0) return null;
 
-    const targetW = w * dpr;
-    const targetH = h * dpr;
+    const targetW = Math.round(w * dpr);
+    const targetH = Math.round(h * dpr);
 
     if (canvas.width !== targetW || canvas.height !== targetH) {
       canvas.width = targetW;
@@ -658,15 +658,34 @@
       if (!this.canvas) return;
 
       this.streams = [
-        { name: 'BTC/USD', color: '#00F28C', offset: 0, speed: 0.02, amp: 28, freq: 0.015, yBase: 0.25 },
-        { name: 'ETH/USD', color: '#46FFA7', offset: 1.5, speed: 0.018, amp: 22, freq: 0.018, yBase: 0.42 },
-        { name: 'NASDAQ', color: '#00B86B', offset: 3.2, speed: 0.024, amp: 18, freq: 0.012, yBase: 0.58 },
-        { name: 'S&P 500', color: '#80FFC4', offset: 4.8, speed: 0.015, amp: 16, freq: 0.014, yBase: 0.72 },
-        { name: 'GOLD', color: '#FFD250', offset: 2.1, speed: 0.012, amp: 14, freq: 0.01, yBase: 0.85 }
+        { name: 'BTC/USD', color: '#00F28C', offset: 0, speed: 0.02, amp: 28, freq: 0.015, yBase: 0.25, visible: true },
+        { name: 'ETH/USD', color: '#46FFA7', offset: 1.5, speed: 0.018, amp: 22, freq: 0.018, yBase: 0.42, visible: true },
+        { name: 'NASDAQ', color: '#00B86B', offset: 3.2, speed: 0.024, amp: 18, freq: 0.012, yBase: 0.58, visible: true },
+        { name: 'S&P 500', color: '#80FFC4', offset: 4.8, speed: 0.015, amp: 16, freq: 0.014, yBase: 0.72, visible: true },
+        { name: 'GOLD', color: '#FFD250', offset: 2.1, speed: 0.012, amp: 14, freq: 0.01, yBase: 0.85, visible: true }
       ];
 
       this.tick = 0;
       this.animate();
+    }
+
+    toggleStream(name, isVisible) {
+      const stream = this.streams.find(s => s.name === name);
+      if (stream) {
+        stream.visible = isVisible;
+      }
+    }
+
+    setFilter(filterType) {
+      this.streams.forEach(stream => {
+        if (filterType === 'all') {
+          stream.visible = true;
+        } else if (filterType === 'crypto') {
+          stream.visible = (stream.name === 'BTC/USD' || stream.name === 'ETH/USD');
+        } else if (filterType === 'macro') {
+          stream.visible = (stream.name !== 'BTC/USD' && stream.name !== 'ETH/USD');
+        }
+      });
     }
 
     animate() {
@@ -694,6 +713,8 @@
 
         // Draw each streaming market wave
         this.streams.forEach(stream => {
+          if (stream.visible === false) return; // Skip if hidden
+
           const centerY = height * stream.yBase;
           ctx.beginPath();
           for (let x = 0; x <= width; x += 4) {
@@ -702,12 +723,16 @@
             if (x === 0) ctx.moveTo(x, waveY);
             else ctx.lineTo(x, waveY);
           }
+          // Wide glow stroke
           ctx.strokeStyle = stream.color;
-          ctx.lineWidth = 2;
-          ctx.shadowColor = stream.color;
-          ctx.shadowBlur = 10;
+          ctx.lineWidth = 5.5;
+          ctx.globalAlpha = 0.15;
           ctx.stroke();
-          ctx.shadowBlur = 0;
+
+          // Sharp core stroke
+          ctx.lineWidth = 1.8;
+          ctx.globalAlpha = 1.0;
+          ctx.stroke();
 
           // Head glowing particle
           const headX = width - 8;
@@ -1335,60 +1360,7 @@
     }
   }
 
-  // ==========================================================================
-  // 7. TERMINAL MINI CANDLESTICK CHART
-  // ==========================================================================
-  class TerminalMiniChart {
-    constructor(canvasId) {
-      this.canvas = document.getElementById(canvasId);
-      if (!this.canvas) return;
-      this.candles = generateCandleData(30, 67800, 0.002, 0.0004);
-      this.render();
-      setInterval(() => {
-        const last = this.candles[this.candles.length - 1];
-        last.close += (Math.random() - 0.49) * 15;
-        last.high = Math.max(last.high, last.close);
-        last.low = Math.min(last.low, last.close);
-        last.isBullish = last.close >= last.open;
-        this.render();
-      }, 400);
-    }
 
-    render() {
-      const setup = setupHiDPICanvas(this.canvas);
-      if (!setup) return;
-      const { ctx, width, height } = setup;
-      ctx.clearRect(0, 0, width, height);
-
-      let min = Infinity, max = -Infinity;
-      this.candles.forEach(c => {
-        if (c.low < min) min = c.low;
-        if (c.high > max) max = c.high;
-      });
-      const range = max - min || 1;
-      const getY = (p) => height - 12 - ((p - min) / range) * (height - 24);
-      const slotW = width / this.candles.length;
-      const candleW = Math.max(2, slotW * 0.65);
-
-      this.candles.forEach((c, idx) => {
-        const x = idx * slotW + slotW / 2;
-        const color = c.isBullish ? '#00F28C' : '#FF4B55';
-        ctx.strokeStyle = color;
-        ctx.fillStyle = color;
-
-        // Wick
-        ctx.beginPath();
-        ctx.moveTo(x, getY(c.high));
-        ctx.lineTo(x, getY(c.low));
-        ctx.stroke();
-
-        // Body
-        const topY = Math.min(getY(c.open), getY(c.close));
-        const bodyH = Math.max(2, Math.abs(getY(c.close) - getY(c.open)));
-        ctx.fillRect(x - candleW / 2, topY, candleW, bodyH);
-      });
-    }
-  }
 
   // --- Global Initialization ---
   window.HedzoCharts = {
@@ -1397,7 +1369,6 @@
     MainAnalyticsChart,
     MultiAssetStream,
     HeroBackgroundGrid,
-    TerminalMiniChart,
     initSparklines
   };
 
