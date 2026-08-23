@@ -1,0 +1,246 @@
+/* ==========================================================================
+   HEDZO UNI — Responsive Layout & Breakpoints
+   ========================================================================== */
+
+/* --- Large Desktops (1440px - 1920px) --- */
+@media (min-width: 1440px) {
+  .container-custom {
+    max-width: 1400px;
+  }
+}
+
+/* --- Standard Laptops & Desktops (1025px - 1280px) --- */
+@media (max-width: 1280px) {
+  .hero-grid {
+    gap: 36px;
+  }
+  .strategies-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .dashboard-main-grid {
+    grid-template-columns: 1fr 300px;
+  }
+  .footer-top-grid {
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  }
+}
+
+/* --- Tablets & Small Laptops (769px - 1024px) --- */
+@media (max-width: 1024px) {
+  :root {
+    --navbar-height: 72px;
+  }
+
+  section {
+    padding: 70px 0;
+  }
+
+  /* Navigation */
+  .nav-center-menu,
+  .nav-status-pill,
+  .nav-lang-btn,
+  .nav-latency-tag {
+    display: none !important;
+  }
+  .mobile-nav-toggle {
+    display: flex;
+  }
+
+  /* Centered Hero */
+  .hero-h1-centered {
+    font-size: 3.6rem;
+  }
+  .hero-candlestick-strip {
+    max-width: 100%;
+    height: 130px;
+  }
+  .hero-bottom-features {
+    gap: 24px;
+  }
+
+  /* Analytics Dashboard */
+  .dashboard-main-grid {
+    grid-template-columns: 1fr;
+  }
+  .dashboard-chart-area {
+    border-right: none;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .main-candlestick-canvas-wrapper {
+    min-height: 360px;
+  }
+
+  /* Signals */
+  .signals-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  /* Terminal */
+  .terminal-body-grid {
+    grid-template-columns: 1fr;
+  }
+  .terminal-watchlist-panel {
+    border-right: none;
+    border-bottom: 1px solid var(--border-subtle);
+    max-height: 220px;
+    overflow-y: auto;
+  }
+  .terminal-order-panel {
+    border-left: none;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  /* Stats Grid */
+  .stats-container-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .stat-box:nth-child(2)::after {
+    display: none;
+  }
+
+  /* Insights */
+  .insights-grid {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Footer */
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+/* --- Mobile Devices (481px - 768px) --- */
+@media (max-width: 768px) {
+  /* Disable custom cursor on mobile touch */
+  .custom-cursor-dot,
+  .custom-cursor-ring {
+    display: none !important;
+  }
+
+  section {
+    padding: 60px 0;
+  }
+
+  .container-custom {
+    padding: 0 18px;
+  }
+
+  .hero-h1-centered {
+    font-size: 2.75rem;
+  }
+
+  .hero-candlestick-strip {
+    height: 120px;
+    margin: 10px auto 28px;
+  }
+
+  .hero-bottom-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .hero-feature-divider {
+    display: none;
+  }
+
+  .market-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .strategies-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-container-grid {
+    grid-template-columns: 1fr;
+  }
+  .stat-box::after {
+    display: none;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .panel-top-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .panel-timeframe-group {
+    justify-content: center;
+  }
+
+  .stream-canvas-wrapper {
+    height: 280px;
+  }
+}
+
+/* --- Small Mobile Phones (320px - 480px) --- */
+@media (max-width: 480px) {
+  .hero-h1-centered {
+    font-size: 2.2rem;
+  }
+  .section-title {
+    font-size: 1.85rem;
+  }
+
+  .hero-cta-centered {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-cta-centered .btn-hero-primary,
+  .hero-cta-centered .btn-hero-secondary {
+    width: 100%;
+  }
+
+  .hero-bottom-features {
+    grid-template-columns: 1fr;
+    text-align: left;
+    gap: 16px;
+  }
+
+  .brand-logo-svg {
+    height: 32px;
+  }
+
+  .canvas-chart-wrapper {
+    height: 240px;
+  }
+
+  .main-candlestick-canvas-wrapper {
+    min-height: 280px;
+  }
+
+  .terminal-mini-canvas-box {
+    height: 180px;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* --- Accessibility: Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .ticker-content {
+    animation: none !important;
+    overflow-x: auto;
+  }
+}
