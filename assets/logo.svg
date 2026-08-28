@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" width="100%" height="100%">
+  <defs>
+    <linearGradient id="logoNeonGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00C853" />
+      <stop offset="60%" stop-color="#00FF88" />
+      <stop offset="100%" stop-color="#00F5D4" />
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+    <filter id="logoGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Emblem / Icon -->
+  <g transform="translate(10, 8)">
+    <!-- Outer Shield Frame -->
+    <rect x="0" y="0" width="64" height="64" rx="16" fill="#0D1426" stroke="#00FF88" stroke-width="1.5" stroke-opacity="0.35"/>
+    
+    <!-- Candlestick Trend Motif -->
+    <g filter="url(#logoGlow)">
+      <!-- Left Candlestick -->
+      <line x1="18" y1="12" x2="18" y2="52" stroke="#00FF88" stroke-width="1.8" stroke-linecap="round" opacity="0.6"/>
+      <rect x="14.5" y="22" width="7" height="22" rx="2" fill="url(#logoNeonGrad)"/>
+      
+      <!-- Right Candlestick -->
+      <line x1="46" y1="10" x2="46" y2="50" stroke="#00FF88" stroke-width="1.8" stroke-linecap="round" opacity="0.6"/>
+      <rect x="42.5" y="16" width="7" height="26" rx="2" fill="url(#logoNeonGrad)"/>
+      
+      <!-- Upward Dynamic Breakout Trend Arrow forming 'H' -->
+      <path d="M18 34 L32 20 L46 28" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="32" cy="20" r="3.5" fill="#00FF88"/>
+      <polygon points="46,24 50,28 44,30" fill="#FFFFFF"/>
+    </g>
+  </g>
+
+  <!-- Brand Typography -->
+  <g transform="translate(90, 20)">
+    <!-- HEDZO -->
+    <text x="0" y="30" font-family="'Outfit', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="900" font-size="34" letter-spacing="3" fill="url(#textGrad)">
+      HEDZO
+    </text>
+    
+    <!-- Green Accent Indicator Dot -->
+    <circle cx="150" cy="14" r="3.5" fill="#00FF88" filter="url(#logoGlow)"/>
+
+    <!-- TRADING ACADEMY -->
+    <text x="2" y="49" font-family="'Outfit', 'Inter', system-ui, -apple-system, sans-serif" font-weight="700" font-size="11.5" letter-spacing="4.5" fill="#00FF88">
+      TRADING ACADEMY
+    </text>
+  </g>
+</svg>
