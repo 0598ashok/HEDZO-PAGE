@@ -6,16 +6,56 @@
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
-  // 0. Initialize AOS (Animate On Scroll) Library
+  // 0. Initialize AOS (Animate On Scroll) Library - Lightweight and Smooth
   if (typeof AOS !== 'undefined') {
     AOS.init({
-      duration: 500,
-      easing: 'cubic-bezier(0.25, 1, 0.5, 1)',
+      duration: 400,
+      easing: 'ease-out-cubic',
       once: true,
-      offset: 40,
-      anchorPlacement: 'top-bottom'
+      offset: 20,
+      disableMutationObserver: false
     });
   }
+
+  // 0.0 Universal Local & Static Server Navigation Router
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a');
+    if (!link) return;
+    const href = link.getAttribute('href');
+    if (!href || href.startsWith('#') || href.startsWith('http://') || href.startsWith('https://') || href.startsWith('tel:') || href.startsWith('mailto:') || href.startsWith('javascript:')) return;
+
+    const isFile = window.location.protocol === 'file:';
+    const isLocalDev = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
+
+    if (isFile) {
+      e.preventDefault();
+      if (href === '/' || href === '') {
+        window.location.href = 'index.html';
+      } else if (href.startsWith('/')) {
+        const clean = href.substring(1).replace(/\/$/, '');
+        window.location.href = clean ? `${clean}.html` : 'index.html';
+      } else {
+        window.location.href = href.endsWith('.html') ? href : `${href}.html`;
+      }
+      return;
+    }
+
+    if (isLocalDev) {
+      const segments = window.location.pathname.split('/').filter(Boolean);
+      const knownPages = ['about', 'courses', 'why-hedzo', 'faqs', 'contact', 'about.html', 'courses.html', 'why-hedzo.html', 'faqs.html', 'contact.html', 'index.html'];
+      let prefix = '';
+      if (segments.length > 0 && !knownPages.includes(segments[0])) {
+        prefix = `/${segments[0]}`;
+      }
+
+      if (href.startsWith('/')) {
+        e.preventDefault();
+        const routeName = href.substring(1).replace(/\/$/, '');
+        const targetFile = routeName ? `${routeName}.html` : 'index.html';
+        window.location.href = `${prefix}/${targetFile}`;
+      }
+    }
+  });
 
   // 0.1 Smooth Scroll Navigation Handler for Anchors
   const anchorLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
@@ -108,6 +148,33 @@ document.addEventListener('DOMContentLoaded', () => {
             if (typeof AOS !== 'undefined') AOS.refresh();
           }, 20);
         }
+      });
+    });
+  }
+
+  // 2.1 Course Category Filters
+  const courseFilterBtns = document.querySelectorAll('.course-filter-btn');
+  const courseCards = document.querySelectorAll('.course-catalog-card[data-category]');
+
+  if (courseFilterBtns.length > 0 && courseCards.length > 0) {
+    courseFilterBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const category = btn.getAttribute('data-filter');
+
+        courseFilterBtns.forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        courseCards.forEach((card) => {
+          const cardCat = card.getAttribute('data-category');
+          if (category === 'all' || cardCat === category) {
+            card.style.display = 'flex';
+            card.style.opacity = '1';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        if (typeof AOS !== 'undefined') AOS.refresh();
       });
     });
   }
@@ -246,7 +313,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 5. 3D Card Interactive Tilt & Glow Effect (Desktop / Fine Pointer only)
   if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-    const cards = document.querySelectorAll('.glass-card, .map-card-wrapper, .stat-card-glass, .step-card, .program-card, .comparison-card, .mentor-glass-card');
+    const cards = document.querySelectorAll('.glass-card, .map-card-wrapper, .stat-card-glass, .step-card, .program-card, .comparison-card, .mentor-glass-card, .pillar-card, .credential-card, .philosophy-card, .why-feature-card, .contact-direct-card, .course-catalog-card');
     cards.forEach((card) => {
       card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
@@ -304,25 +371,164 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 8. Active state update on scroll for navbar links
-  const sections = document.querySelectorAll('section[id], header[id]');
+  // 8. Active state update on scroll for navbar in-page anchor links
+  const inPageSections = document.querySelectorAll('section[id], header[id]');
   const desktopNavLinks = document.querySelectorAll('.nav-link-custom');
-
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop - 100;
-      const sectionHeight = section.clientHeight;
-      if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-        current = section.getAttribute('id');
-      }
-    });
-
-    desktopNavLinks.forEach((link) => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
-      }
-    });
+  const hasInPageNav = Array.from(desktopNavLinks).some(link => {
+    const h = link.getAttribute('href');
+    return h && h.startsWith('#') && h.length > 1;
   });
+
+  if (hasInPageNav && inPageSections.length > 0) {
+    window.addEventListener('scroll', () => {
+      let current = '';
+      inPageSections.forEach((section) => {
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.clientHeight;
+        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      if (current) {
+        desktopNavLinks.forEach((link) => {
+          const href = link.getAttribute('href');
+          if (href && href.startsWith('#')) {
+            link.classList.remove('active');
+            if (href === `#${current}`) {
+              link.classList.add('active');
+            }
+          }
+        });
+      }
+    });
+  }
+
+  // 9. Modern FAQ Accordion Controller
+  const faqItems = document.querySelectorAll('.faq-accordion-item');
+  if (faqItems.length > 0) {
+    faqItems.forEach((item) => {
+      const btn = item.querySelector('.faq-question-btn');
+      const pane = item.querySelector('.faq-answer-pane');
+
+      if (btn && pane) {
+        btn.addEventListener('click', () => {
+          const isOpen = item.classList.contains('active');
+
+          // Close all other items smoothly
+          faqItems.forEach((otherItem) => {
+            if (otherItem !== item && otherItem.classList.contains('active')) {
+              otherItem.classList.remove('active');
+              const otherBtn = otherItem.querySelector('.faq-question-btn');
+              const otherPane = otherItem.querySelector('.faq-answer-pane');
+              if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+              if (otherPane) otherPane.style.maxHeight = null;
+            }
+          });
+
+          // Toggle current item state
+          if (isOpen) {
+            item.classList.remove('active');
+            btn.setAttribute('aria-expanded', 'false');
+            pane.style.maxHeight = null;
+          } else {
+            item.classList.add('active');
+            btn.setAttribute('aria-expanded', 'true');
+            pane.style.maxHeight = pane.scrollHeight + 'px';
+          }
+
+          if (typeof AOS !== 'undefined') {
+            setTimeout(() => AOS.refresh(), 350);
+          }
+        });
+      }
+    });
+  }
+
+  // 10. Contact Page Enquiry Form Handler
+  const contactForm = document.getElementById('contactEnquiryForm');
+  const contactSubmitBtn = document.getElementById('contactSubmitBtn');
+  const contactFeedback = document.getElementById('contactFormFeedback');
+
+  if (contactForm && contactSubmitBtn) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const nameInput = document.getElementById('contactName');
+      const emailInput = document.getElementById('contactEmail');
+      const phoneInput = document.getElementById('contactPhone');
+      const programInput = document.getElementById('contactProgram');
+      const messageInput = document.getElementById('contactMessage');
+
+      const name = nameInput ? nameInput.value.trim() : '';
+      const email = emailInput ? emailInput.value.trim() : '';
+      const phone = phoneInput ? phoneInput.value.trim() : '';
+      const program = programInput ? programInput.value : '';
+      const message = messageInput ? messageInput.value.trim() : '';
+
+      // Clear feedback
+      if (contactFeedback) {
+        contactFeedback.className = 'form-feedback';
+        contactFeedback.textContent = '';
+      }
+
+      // Basic validations
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+      if (!name) {
+        showContactFeedback('Please enter your full name.', 'error');
+        nameInput.focus();
+        return;
+      }
+      if (!email || !emailRegex.test(email)) {
+        showContactFeedback('Please enter a valid email address.', 'error');
+        emailInput.focus();
+        return;
+      }
+      if (!phone || phone.length < 7) {
+        showContactFeedback('Please enter a valid contact phone number.', 'error');
+        phoneInput.focus();
+        return;
+      }
+      if (!message) {
+        showContactFeedback('Please enter a brief message or learning goal.', 'error');
+        messageInput.focus();
+        return;
+      }
+
+      // Simulate loading state
+      const originalBtnText = contactSubmitBtn.innerHTML;
+      contactSubmitBtn.disabled = true;
+      contactSubmitBtn.innerHTML = `
+        <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+        <span>Sending Enquiry...</span>
+      `;
+
+      setTimeout(() => {
+        contactSubmitBtn.disabled = false;
+        contactSubmitBtn.innerHTML = `
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="me-1">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span>Enquiry Submitted!</span>
+        `;
+        showContactFeedback('Thank you for reaching out! Our advisory desk will get back to you shortly.', 'success');
+        showToast('Enquiry Received', `Thank you ${name}. Our Hedzo mentorship advisory desk will contact you within 24 hours.`);
+        
+        // Reset form
+        contactForm.reset();
+
+        setTimeout(() => {
+          contactSubmitBtn.innerHTML = originalBtnText;
+        }, 5000);
+      }, 750);
+    });
+  }
+
+  function showContactFeedback(message, type) {
+    if (!contactFeedback) return;
+    contactFeedback.textContent = message;
+    contactFeedback.className = `form-feedback feedback-${type} show mt-3`;
+  }
 });
+
+

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <!-- SEO Title & Meta Description -->
+  <title>About Hedzo Trading Academy | Meet Your Mentor</title>
+  <meta name="description" content="Meet Mr. Homesh, financial markets mentor and the driving force behind Hedzo Trading Academy. Backed by elite ISB & ASCI business education with 12+ years of real-world trading experience across Stocks, Forex, Futures, and Crypto.">
+  <meta name="keywords" content="Hedzo Trading Academy, About Hedzo, Mr Homesh, Meet Your Mentor Mr Homesh, Hedzo Mentor, Learn Trading with Hedzo, Hedzo Stock Market Education, Trading Courses by Hedzo, Financial Market Education, Technical Analysis, Smart Money Concepts, Stocks, Forex, Futures, Crypto">
+  <meta name="author" content="Hedzo Trading Academy">
+  <meta name="theme-color" content="#050811">
+  <link rel="canonical" href="https://hedzo.co.in/about">
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:site_name" content="Hedzo Trading Academy">
+  <meta property="og:title" content="About Hedzo Trading Academy | Meet Your Mentor">
+  <meta property="og:description" content="Serial Entrepreneur, power-house investor, and the driving force behind HEDZO with 12+ years of trading experience. Backed by ISB & ASCI education and proven leadership at Red Health and Medicover.">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://hedzo.co.in/about">
+  <meta property="og:image" content="https://hedzo.co.in/assets/logo/Hedzo.png">
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Hedzo Trading Academy | Meet Your Mentor">
+  <meta name="twitter:description" content="Serial Entrepreneur, power-house investor, and the driving force behind HEDZO with 12+ years of trading experience. Backed by ISB & ASCI education.">
+  <meta name="twitter:image" content="https://hedzo.co.in/assets/logo/Hedzo.png">
+
+  <!-- Favicon Links -->
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="shortcut icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+  
+  <!-- Google Fonts: Outfit, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 CSS (Grid & Utilities) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  
+  <!-- AOS Animation Library -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- JSON-LD Structured Data: AboutPage & Person (Mr. Homesh) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Hedzo Trading Academy - Meet Your Mentor Mr. Homesh",
+    "description": "Learn about Mr. Homesh and Hedzo Trading Academy's mission to provide elite institutional trading mentorship.",
+    "url": "https://hedzo.co.in/about",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Mr. Homesh",
+      "jobTitle": "Founder & Master Trading Mentor",
+      "alumniOf": ["Indian School of Business (ISB)", "Administrative Staff College of India (ASCI)"],
+      "description": "Serial Entrepreneur, power-house investor, and the driving force behind HEDZO with over 12 years of real-world trading experience across Stocks, Forex, Futures, and Crypto.",
+      "worksFor": {
+        "@type": "EducationalOrganization",
+        "name": "Hedzo Trading Academy",
+        "url": "https://hedzo.co.in"
+      }
+    }
+  }
+  </script>
+</head>
+<body class="dark-theme">
+
+  <!-- Dynamic Trading Canvas Background (Exact Match to index.html) -->
+  <div class="canvas-wrapper">
+    <canvas id="trading-canvas"></canvas>
+  </div>
+
+  <!-- Ambient Glows & Grid Overlay (Exact Match to index.html) -->
+  <div class="ambient-glow glow-top-left"></div>
+  <div class="ambient-glow glow-center-right"></div>
+  <div class="ambient-glow glow-bottom-center"></div>
+  <div class="grid-overlay"></div>
+
+  <!-- Main Webpage Wrapper -->
+  <div class="page-wrapper">
+
+    <!-- Top Navigation / Header (Synchronized Global Navbar) -->
+    <header class="top-navbar" id="topHeader">
+      <div class="container">
+        <div class="d-flex align-items-center justify-content-between">
+          <a href="/" class="navbar-brand-wrapper" aria-label="Hedzo Trading Academy Home">
+            <img 
+              src="https://hedzo.co.in/assets/logo/Hedzo.png" 
+              alt="Hedzo Trading Academy Logo" 
+              class="brand-logo-img" 
+              onerror="this.onerror=null; this.src='assets/Hedzo.png';"
+            >
+          </a>
+
+          <!-- Desktop Links -->
+          <ul class="nav-links-desktop">
+            <li><a href="/" class="nav-link-custom">Home</a></li>
+            <li><a href="/about" class="nav-link-custom active">About</a></li>
+            <li><a href="/courses" class="nav-link-custom">Courses</a></li>
+            <li><a href="/why-hedzo" class="nav-link-custom">Why Hedzo</a></li>
+            <li><a href="/faqs" class="nav-link-custom">FAQs</a></li>
+            <li><a href="/contact" class="nav-link-custom">Contact</a></li>
+          </ul>
+
+          <div class="navbar-action-buttons">
+            <!-- Always-visible Call Button (Desktop + Mobile) -->
+            <a href="tel:+917075802907" class="navbar-call-btn" id="navCallBtn" title="Call Hedzo Trading Academy: +91 7075802907" aria-label="Call +91 7075802907">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="call-icon">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <span class="call-text d-none d-sm-inline">+91 7075802907</span>
+              <span class="call-text d-inline d-sm-none">Call</span>
+            </a>
+
+            <!-- 🟢 BOOK DEMO Button: Visible on DESKTOP navbar ONLY (hidden on mobile navbar) -->
+            <a href="https://wa.me/917075802907?text=Hi%2C%20I%20want%20to%20book%20a%20free%20demo%20class%20at%20Hedzo%20Trading%20Academy." target="_blank" rel="noopener noreferrer" class="btn-navbar-book-demo d-none d-lg-inline-flex" id="navBookDemoBtn" aria-label="Book Free Demo Class on WhatsApp">
+              <span>BOOK DEMO</span>
+            </a>
+
+            <!-- Mobile Hamburger Toggle Button -->
+            <button class="nav-toggle-btn" id="navToggleBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="4" y1="6" x2="20" y2="6"></line>
+                <line x1="4" y1="12" x2="20" y2="12"></line>
+                <line x1="4" y1="18" x2="20" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-nav-drawer" id="mobileNavDrawer">
+      <ul class="mobile-nav-list">
+        <li><a href="/" class="mobile-nav-link"><span>Home</span> <span>&rarr;</span></a></li>
+        <li><a href="/about" class="mobile-nav-link active"><span>About Us</span> <span>&rarr;</span></a></li>
+        <li><a href="/courses" class="mobile-nav-link"><span>Courses</span> <span>&rarr;</span></a></li>
+        <li><a href="/why-hedzo" class="mobile-nav-link"><span>Why Hedzo</span> <span>&rarr;</span></a></li>
+        <li><a href="/faqs" class="mobile-nav-link"><span>FAQs</span> <span>&rarr;</span></a></li>
+        <li><a href="/contact" class="mobile-nav-link"><span>Contact Us</span> <span>&rarr;</span></a></li>
+      </ul>
+      <a href="https://wa.me/917075802907?text=Hi%2C%20I%20want%20to%20book%20a%20free%20demo%20class%20at%20Hedzo%20Trading%20Academy." target="_blank" rel="noopener noreferrer" class="btn-navbar-book-demo w-100 justify-content-center" id="mobileDrawerBookDemoBtn" aria-label="Book Free Demo Class on WhatsApp">
+        <span>BOOK DEMO</span>
+      </a>
+    </div>
+
+    <!-- Market Ticker Ribbon -->
+    <section class="market-ticker-wrapper" aria-label="Market Discipline Indicators">
+      <div class="ticker-track">
+        <div class="ticker-item">
+          <span class="symbol">HEDZO ACADEMY</span>
+          <span class="badge-tag">ABOUT US</span>
+        </div>
+        <div class="ticker-item">
+          <span class="symbol">MR. HOMESH</span>
+          <span class="bull-val">&#9650; 12+ YEARS EXPERIENCE</span>
+        </div>
+        <div class="ticker-item">
+          <span class="symbol">BUSINESS EDUCATION</span>
+          <span class="bull-val">&#9650; ISB &amp; ASCI</span>
+        </div>
+        <div class="ticker-item">
+          <span class="symbol">MARKET EXPERTISE</span>
+          <span class="badge-tag">STOCKS &bull; FOREX &bull; FUTURES &bull; CRYPTO</span>
+        </div>
+        <div class="ticker-item">
+          <span class="symbol">SMART MONEY CONCEPTS</span>
+          <span class="bull-val">&#9650; INSTITUTIONAL ORDER FLOW</span>
+        </div>
+        <div class="ticker-item">
+          <span class="symbol">RISK DISCIPLINE</span>
+          <span class="badge-tag">CAPITAL PRESERVATION</span>
+        </div>
+        <!-- Duplicated for seamless infinite loop -->
+        <div class="ticker-item">
+          <span class="symbol">HEDZO ACADEMY</span>
+          <span class="badge-tag">ABOUT US</span>
+        </div>
+        <div class="ticker-item">
+          <span class="symbol">MR. HOMESH</span>
+          <span class="bull-val">&#9650; 12+ YEARS EXPERIENCE</span>
+        </div>
+        <div class="ticker-item">
+          <span class="symbol">BUSINESS EDUCATION</span>
+          <span class="bull-val">&#9650; ISB &amp; ASCI</span>
+        </div>
+        <div class="ticker-item">
+          <span class="symbol">MARKET EXPERTISE</span>
+          <span class="badge-tag">STOCKS &bull; FOREX &bull; FUTURES &bull; CRYPTO</span>
+        </div>
+        <div class="ticker-item">
+          <span class="symbol">SMART MONEY CONCEPTS</span>
+          <span class="bull-val">&#9650; INSTITUTIONAL ORDER FLOW</span>
+        </div>
+        <div class="ticker-item">
+          <span class="symbol">RISK DISCIPLINE</span>
+          <span class="badge-tag">CAPITAL PRESERVATION</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main About Page Content -->
+    <main>
+      <!-- Section 1: Hero & Meet Your Mentor Profile -->
+      <section class="about-hero-section" id="aboutMentorSection">
+        <div class="container">
+          
+          <!-- Top Badge & Main Heading -->
+          <div class="text-center mb-5 reveal-on-scroll" data-aos="fade-down" data-aos-duration="650">
+            <div class="hero-badge-pill mb-3">
+              <span class="pulse-indicator"></span>
+              <span>ABOUT HEDZO TRADING ACADEMY &bull; LEADERSHIP &amp; MENTORSHIP</span>
+            </div>
+            <h1 class="hero-title mb-3">
+              <span class="title-white">Meet Your Mentor -</span>
+              <span class="title-neon">Mr. Homesh</span>
+            </h1>
+            <p class="hero-subtitle mb-0">
+              Serial Entrepreneur | Power-House Investor | Financial Markets Mentor &amp; Driving Force behind HEDZO
+            </p>
+          </div>
+
+          <!-- Large Mentor Showcase Card -->
+          <div class="row justify-content-center">
+            <div class="col-12 col-lg-11 col-xl-10 reveal-on-scroll" data-aos="fade-up" data-aos-duration="750">
+              <div class="mentor-showcase-card">
+                
+                <!-- Profile Header Area -->
+                <div class="mentor-profile-header">
+                  <!-- Monogram Mentor Badge Placeholder (No invented photo) -->
+                  <div class="mentor-avatar-badge-lg" title="Mr. Homesh - Hedzo Trading Academy">
+                    <span>MH</span>
+                  </div>
+
+                  <div class="mentor-header-info">
+                    <div class="mentor-badge-label">
+                      <span class="live-dot"></span>
+                      <span>HEDZO FOUNDER &bull; MASTER TRADING MENTOR</span>
+                    </div>
+                    <h2 class="mentor-name-heading">Mr. Homesh</h2>
+                    <div class="mentor-subtitle-tag">
+                      <span>Serial Entrepreneur</span>
+                      <span class="divider-bullet">&bull;</span>
+                      <span>Power-House Investor</span>
+                      <span class="divider-bullet">&bull;</span>
+                      <span>Financial Markets Analyst</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 4 Highlights Credentials Bar -->
+                <div class="mentor-credentials-bar">
+                  <div class="credential-card">
+                    <div class="credential-icon-box" aria-hidden="true">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="credential-title">12+ Years</div>
+                      <p class="credential-desc">Real-World Trading Experience in live financial markets.</p>
+                    </div>
+                  </div>
+
+                  <div class="credential-card">
+                    <div class="credential-icon-box" aria-hidden="true">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                        <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="credential-title">ISB &amp; ASCI</div>
+                      <p class="credential-desc">Elite business education &amp; executive institutional training.</p>
+                    </div>
+                  </div>
+
+                  <div class="credential-card">
+                    <div class="credential-icon-box" aria-hidden="true">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                        <polyline points="17 6 23 6 23 12"></polyline>
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="credential-title">Serial Entrepreneur</div>
+                      <p class="credential-desc">Proven leadership scaling Red Health &amp; Medicover ventures.</p>
+                    </div>
+                  </div>
+
+                  <div class="credential-card">
+                    <div class="credential-icon-box" aria-hidden="true">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="credential-title">Market Analyst</div>
+                      <p class="credential-desc">Multi-asset mastery across Stocks, Forex, Futures &amp; Crypto.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Long-Form Biography Card with Perfect Typography -->
+                <div class="mentor-bio-box">
+                  <p class="mentor-bio-text">
+                    Serial Entrepreneur, power-house investor, and the driving force behind <strong class="highlight-text">HEDZO</strong>, <strong>Mr. Homesh</strong> is a financial markets veteran with over <strong>12 years of real-world trading experience</strong>.
+                  </p>
+                  <p class="mentor-bio-text">
+                    Backed by elite business education from <strong>ISB and ASCI</strong>, along with proven leadership at healthcare leaders like <strong>Red Health and Medicover</strong>, Homesh has built and scaled multiple ventures from the ground up. In the trading world, he is an all-round market analyst—mastering everything from <strong>Stocks, Forex, and Futures to Crypto and global financial trends</strong>.
+                  </p>
+                  <p class="mentor-bio-text">
+                    Whether you are looking to build a business or master the markets, Homesh brings the exact blueprints, institutional strategies, and high-energy guidance you need to dominate.
+                  </p>
+                </div>
+
+                <!-- Quick Visual Pill Indicators -->
+                <div class="markets-pill-bar justify-content-center mb-0">
+                  <span class="market-chip"><span class="market-chip-icon"></span> 12+ YEARS TRADING</span>
+                  <span class="market-chip"><span class="market-chip-icon"></span> ISB &amp; ASCI ALUMNI</span>
+                  <span class="market-chip"><span class="market-chip-icon"></span> STOCKS &amp; EQUITIES</span>
+                  <span class="market-chip"><span class="market-chip-icon"></span> FOREX MARKETS</span>
+                  <span class="market-chip"><span class="market-chip-icon"></span> FUTURES &amp; DERIVATIVES</span>
+                  <span class="market-chip"><span class="market-chip-icon"></span> CRYPTO ASSETS</span>
+                  <span class="market-chip"><span class="market-chip-icon"></span> GLOBAL MACRO TRENDS</span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Section 2: Multi-Asset Market Mastery -->
+      <section class="pillars-section" id="marketPillars">
+        <div class="container">
+          <div class="section-label-center reveal-on-scroll" data-aos="fade-up" data-aos-duration="650">
+            <span class="section-badge-pill">COMPREHENSIVE MARKET SCOPE</span>
+            <h2 class="section-main-heading">MULTI-ASSET MARKET MASTERY</h2>
+            <p class="section-sub-desc">
+              Homesh's institutional strategies span across all major global asset classes, giving students a universal edge in understanding market structure and order flow.
+            </p>
+          </div>
+
+          <div class="asset-pillars-grid">
+            <!-- Pillar 1: Stocks -->
+            <div class="pillar-card reveal-on-scroll" data-aos="fade-up" data-aos-duration="600" data-aos-delay="50">
+              <div class="pillar-icon-box" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+              </div>
+              <h3 class="pillar-title">Stocks &amp; Equities</h3>
+              <p class="pillar-desc">Mastering equity cycles, institutional accumulation, and high-probability swing execution.</p>
+            </div>
+
+            <!-- Pillar 2: Forex -->
+            <div class="pillar-card reveal-on-scroll" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+              <div class="pillar-icon-box" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="1" x2="12" y2="23"></line>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+              </div>
+              <h3 class="pillar-title">Forex &amp; Currencies</h3>
+              <p class="pillar-desc">Decoding global liquidity dynamics, inter-market currency correlations, and London/NY session volume.</p>
+            </div>
+
+            <!-- Pillar 3: Futures & Options -->
+            <div class="pillar-card reveal-on-scroll" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
+              <div class="pillar-icon-box" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+                  <polyline points="16 7 22 7 22 13"></polyline>
+                </svg>
+              </div>
+              <h3 class="pillar-title">Futures &amp; Options</h3>
+              <p class="pillar-desc">Smart Money order flow, Open Interest decoding, Greeks hedging, and risk-defined spreads.</p>
+            </div>
+
+            <!-- Pillar 4: Crypto -->
+            <div class="pillar-card reveal-on-scroll" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+              <div class="pillar-icon-box" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M9.5 9.5c.5-1 1.5-1.5 2.5-1.5s2 .5 2.5 1.5"></path>
+                  <path d="M9.5 14.5c.5 1 1.5 1.5 2.5 1.5s2-.5 2.5-1.5"></path>
+                  <line x1="9" y1="12" x2="15" y2="12"></line>
+                </svg>
+              </div>
+              <h3 class="pillar-title">Crypto &amp; Digital Assets</h3>
+              <p class="pillar-desc">Understanding halving cycles, liquidity sweeps, order book imbalances, and structural trend shifts.</p>
+            </div>
+
+            <!-- Pillar 5: Global Trends -->
+            <div class="pillar-card reveal-on-scroll" data-aos="fade-up" data-aos-duration="600" data-aos-delay="250">
+              <div class="pillar-icon-box" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+              </div>
+              <h3 class="pillar-title">Global Financial Trends</h3>
+              <p class="pillar-desc">Synthesizing macroeconomic trends, central bank policies, and institutional volume flows.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Educational Philosophy & Institutional Blueprints -->
+      <section class="academy-section" id="philosophySection">
+        <div class="container">
+          <div class="section-label-center reveal-on-scroll" data-aos="fade-up" data-aos-duration="650">
+            <span class="section-badge-pill">THE MENTORSHIP PHILOSOPHY</span>
+            <h2 class="section-main-heading">WHY LEARN WITH HOMESH AT HEDZO?</h2>
+            <p class="section-sub-desc">
+              Built on institutional discipline, entrepreneurial scaling frameworks, and ethical financial market education.
+            </p>
+          </div>
+
+          <div class="philosophy-grid">
+            <!-- Philosophy Card 1 -->
+            <div class="philosophy-card reveal-on-scroll" data-aos="fade-up" data-aos-duration="650" data-aos-delay="50">
+              <div class="philosophy-num">01</div>
+              <h3 class="philosophy-title">Institutional SMC Blueprints</h3>
+              <p class="philosophy-desc">
+                Learn to read the footprints of banks, institutions, and hedge funds. Instead of relying on lagging retail indicators, you master order blocks, liquidity voids, and fair value gaps.
+              </p>
+            </div>
+
+            <!-- Philosophy Card 2 -->
+            <div class="philosophy-card reveal-on-scroll" data-aos="fade-up" data-aos-duration="650" data-aos-delay="150">
+              <div class="philosophy-num">02</div>
+              <h3 class="philosophy-title">Entrepreneurial Trading Mindset</h3>
+              <p class="philosophy-desc">
+                Drawing on 12+ years of venture scaling and business leadership, Homesh trains you to treat trading as a professional, mathematical business with strict risk controls and position sizing.
+              </p>
+            </div>
+
+            <!-- Philosophy Card 3 -->
+            <div class="philosophy-card reveal-on-scroll" data-aos="fade-up" data-aos-duration="650" data-aos-delay="250">
+              <div class="philosophy-num">03</div>
+              <h3 class="philosophy-title">Zero Hype &amp; Pure Skill Building</h3>
+              <p class="philosophy-desc">
+                Hedzo rejects false promises, guaranteed profit claims, or speculative tips. We focus 100% on rigorous technical analysis, capital preservation rules, and actionable market mentorship.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Strong Bottom CTA -->
+      <section class="mentor-cta-section" id="mentorCta">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-lg-10 reveal-on-scroll" data-aos="zoom-in" data-aos-duration="700">
+              <div class="mentor-cta-banner">
+                <div class="hero-badge-pill mb-3">
+                  <span class="pulse-indicator"></span>
+                  <span>TRANSFORM YOUR TRADING DISCIPLINE</span>
+                </div>
+                <h2 class="mentor-cta-title">Ready to Learn from Mr. Homesh?</h2>
+                <p class="mentor-cta-subtitle">
+                  Whether you are starting from complete fundamentals or seeking institutional SMC strategies to refine your edge, Hedzo Trading Academy provides the direct mentorship you need.
+                </p>
+                
+                <div class="hero-cta-group justify-content-center mb-0">
+                  <a href="https://wa.me/917075802907?text=Hi%2C%20I%20want%20to%20book%20a%20free%20demo%20class%20and%20speak%20with%20Mr.%20Homesh%20at%20Hedzo%20Trading%20Academy." target="_blank" rel="noopener noreferrer" class="btn-hero-primary">
+                    <span>BOOK DEMO ON WHATSAPP</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </a>
+
+                  <a href="/courses" class="btn-hero-secondary">
+                    <span>EXPLORE TRADING COURSES</span>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                      <polyline points="14 2 14 8 20 8"></polyline>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Multi-Column Academy Footer -->
+    <footer class="main-footer-enhanced" id="mainFooter">
+      <div class="container">
+        <div class="row g-4 mb-4">
+          <!-- Column 1: Brand -->
+          <div class="col-12 col-lg-4">
+            <div class="footer-brand-title">HEDZO TRADING ACADEMY</div>
+            <p class="footer-desc">
+              Hedzo Trading Academy is dedicated to providing high-quality stock market education, technical analysis training, Smart Money Concepts (SMC), and financial market education.
+            </p>
+            <div class="footer-location-badge">
+              <span class="live-dot"></span>
+              <span>H.No 2, 117/9/B, Darga Hussain Shahwali, Lanco Hills Rd, OU Colony, Manikonda, Hyderabad, Telangana 500104</span>
+            </div>
+          </div>
+
+          <!-- Column 2: Navigation -->
+          <div class="col-6 col-md-3 col-lg-2">
+            <div class="footer-col-heading">Quick Links</div>
+            <ul class="footer-link-list">
+              <li class="footer-link-item"><a href="/">Home</a></li>
+              <li class="footer-link-item"><a href="/about">About Hedzo</a></li>
+              <li class="footer-link-item"><a href="/courses">Hedzo Courses</a></li>
+              <li class="footer-link-item"><a href="/why-hedzo">Why Hedzo</a></li>
+              <li class="footer-link-item"><a href="/faqs">FAQs</a></li>
+              <li class="footer-link-item"><a href="/contact">Contact Hedzo</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Course Topics -->
+          <div class="col-6 col-md-3 col-lg-3">
+            <div class="footer-col-heading">Hedzo Education</div>
+            <ul class="footer-link-list">
+              <li class="footer-link-item"><a href="/courses">Stock Market Trading Course</a></li>
+              <li class="footer-link-item"><a href="/courses">Smart Money Concepts (SMC)</a></li>
+              <li class="footer-link-item"><a href="/courses">Technical Analysis Masterclass</a></li>
+              <li class="footer-link-item"><a href="/courses">Futures &amp; Options Strategies</a></li>
+              <li class="footer-link-item"><a href="/courses">Financial Market Risk Management</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Contact Summary -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="footer-col-heading">Contact &amp; Socials</div>
+            <ul class="footer-link-list">
+              <li class="footer-link-item">
+                <a href="tel:+917075802907" class="d-inline-flex align-items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                  <span>+91 7075802907</span>
+                </a>
+              </li>
+              <li class="footer-link-item">
+                <a href="mailto:hedzoacademy@gmail.com">hedzoacademy@gmail.com</a>
+              </li>
+              <li class="footer-link-item">
+                <a href="https://wa.me/917075802907" target="_blank" rel="noopener noreferrer">WhatsApp Advisory Desk</a>
+              </li>
+              <li class="footer-link-item">
+                <a href="https://www.instagram.com/hedzo.academy?igsi=NGZibHQxMHphcmlt&utm_source=ig_contact_invite" target="_blank" rel="noopener noreferrer">Instagram: @hedzo.academy</a>
+              </li>
+              <li class="footer-link-item">
+                <a href="https://share.google/PA1BuHLwv5aj3FNFn" target="_blank" rel="noopener noreferrer">Hedzo on Google</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Educational Disclaimer Box -->
+        <div class="disclaimer-box">
+          <strong>Educational Disclaimer:</strong> Hedzo Trading Academy provides stock market education, technical analysis training, and risk management concepts strictly for educational purposes. Hedzo does not offer guaranteed returns, fixed income claims, stock tips, or SEBI-registered advisory services. Trading in financial markets involves risk to capital.
+        </div>
+
+        <div class="text-center pt-3 border-top border-secondary border-opacity-25">
+          <p class="copyright-text mb-0">
+            &copy; 2026 Hedzo Trading Academy. All Rights Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="toast-container-custom" aria-live="polite"></div>
+
+  <!-- Custom & Library Scripts -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="js/trading-canvas.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

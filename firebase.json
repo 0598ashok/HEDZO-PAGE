@@ -1,6 +1,29 @@
 {
   "hosting": {
     "public": ".",
+    "cleanUrls": true,
+    "rewrites": [
+      {
+        "source": "/courses",
+        "destination": "/courses.html"
+      },
+      {
+        "source": "/about",
+        "destination": "/about.html"
+      },
+      {
+        "source": "/why-hedzo",
+        "destination": "/why-hedzo.html"
+      },
+      {
+        "source": "/faqs",
+        "destination": "/faqs.html"
+      },
+      {
+        "source": "/contact",
+        "destination": "/contact.html"
+      }
+    ],
     "ignore": [
       "firebase.json",
       "**/.*",

@@ -89,7 +89,7 @@
     <header class="top-navbar" id="topHeader">
       <div class="container">
         <div class="d-flex align-items-center justify-content-between">
-          <a href="#" class="navbar-brand-wrapper" aria-label="Hedzo Trading Academy Home">
+          <a href="/" class="navbar-brand-wrapper" aria-label="Hedzo Trading Academy Home">
             <img 
               src="https://hedzo.co.in/assets/logo/Hedzo.png" 
               alt="Hedzo Trading Academy Logo" 
@@ -100,27 +100,30 @@
 
           <!-- Desktop Links -->
           <ul class="nav-links-desktop">
-            <li><a href="#heroSection" class="nav-link-custom active">Home</a></li>
-            <li><a href="#aboutSection" class="nav-link-custom">About</a></li>
-            <li><a href="#coursesSection" class="nav-link-custom">Courses</a></li>
-            <li><a href="#whyHedzoSection" class="nav-link-custom">Why Hedzo</a></li>
-            <li><a href="#contactSection" class="nav-link-custom">Contact</a></li>
+            <li><a href="/" class="nav-link-custom active">Home</a></li>
+            <li><a href="/about" class="nav-link-custom">About</a></li>
+            <li><a href="/courses" class="nav-link-custom">Courses</a></li>
+            <li><a href="/why-hedzo" class="nav-link-custom">Why Hedzo</a></li>
+            <li><a href="/faqs" class="nav-link-custom">FAQs</a></li>
+            <li><a href="/contact" class="nav-link-custom">Contact</a></li>
           </ul>
 
-          <div class="d-flex align-items-center gap-3">
-            <div class="location-pill d-none d-sm-inline-flex">
-              <span class="live-dot"></span>
-              <span>Hyderabad, India</span>
-            </div>
-            
-            <a href="https://wa.me/917075802907?text=Hi%2C%20I%20want%20to%20book%20a%20free%20demo%20class%20at%20Hedzo%20Trading%20Academy." target="_blank" rel="noopener noreferrer" class="btn-navbar-cta d-none d-md-inline-flex">
-              <span>Book Demo</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"></path>
-                <path d="m12 5 7 7-7 7"></path>
+          <div class="navbar-action-buttons">
+            <!-- Always-visible Call Button (Desktop + Mobile) -->
+            <a href="tel:+917075802907" class="navbar-call-btn" id="navCallBtn" title="Call Hedzo Trading Academy: +91 7075802907" aria-label="Call +91 7075802907">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="call-icon">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
               </svg>
+              <span class="call-text d-none d-sm-inline">+91 7075802907</span>
+              <span class="call-text d-inline d-sm-none">Call</span>
             </a>
 
+            <!-- 🟢 BOOK DEMO Button: Visible on DESKTOP navbar ONLY (hidden on mobile navbar) -->
+            <a href="https://wa.me/917075802907?text=Hi%2C%20I%20want%20to%20book%20a%20free%20demo%20class%20at%20Hedzo%20Trading%20Academy." target="_blank" rel="noopener noreferrer" class="btn-navbar-book-demo d-none d-lg-inline-flex" id="navBookDemoBtn" aria-label="Book Free Demo Class on WhatsApp">
+              <span>BOOK DEMO</span>
+            </a>
+
+            <!-- Mobile Hamburger Toggle Button -->
             <button class="nav-toggle-btn" id="navToggleBtn" aria-label="Toggle navigation menu" aria-expanded="false">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="4" y1="6" x2="20" y2="6"></line>
@@ -136,14 +139,15 @@
     <!-- Mobile Navigation Drawer -->
     <div class="mobile-nav-drawer" id="mobileNavDrawer">
       <ul class="mobile-nav-list">
-        <li><a href="#heroSection" class="mobile-nav-link"><span>Home</span> <span>&rarr;</span></a></li>
-        <li><a href="#aboutSection" class="mobile-nav-link"><span>About Hedzo</span> <span>&rarr;</span></a></li>
-        <li><a href="#coursesSection" class="mobile-nav-link"><span>Courses &amp; Curriculum</span> <span>&rarr;</span></a></li>
-        <li><a href="#whyHedzoSection" class="mobile-nav-link"><span>Why Hedzo</span> <span>&rarr;</span></a></li>
-        <li><a href="#contactSection" class="mobile-nav-link"><span>Contact Us</span> <span>&rarr;</span></a></li>
+        <li><a href="/" class="mobile-nav-link active"><span>Home</span> <span>&rarr;</span></a></li>
+        <li><a href="/about" class="mobile-nav-link"><span>About Us</span> <span>&rarr;</span></a></li>
+        <li><a href="/courses" class="mobile-nav-link"><span>Courses</span> <span>&rarr;</span></a></li>
+        <li><a href="/why-hedzo" class="mobile-nav-link"><span>Why Hedzo</span> <span>&rarr;</span></a></li>
+        <li><a href="/faqs" class="mobile-nav-link"><span>FAQs</span> <span>&rarr;</span></a></li>
+        <li><a href="/contact" class="mobile-nav-link"><span>Contact Us</span> <span>&rarr;</span></a></li>
       </ul>
-      <a href="https://wa.me/917075802907?text=Hi%2C%20I%20want%20to%20book%20a%20free%20demo%20class%20at%20Hedzo%20Trading%20Academy." target="_blank" rel="noopener noreferrer" class="btn-hero-primary w-100 justify-content-center">
-        <span>Book Free Demo Class</span>
+      <a href="https://wa.me/917075802907?text=Hi%2C%20I%20want%20to%20book%20a%20free%20demo%20class%20at%20Hedzo%20Trading%20Academy." target="_blank" rel="noopener noreferrer" class="btn-navbar-book-demo w-100 justify-content-center" id="mobileDrawerBookDemoBtn" aria-label="Book Free Demo Class on WhatsApp">
+        <span>BOOK DEMO</span>
       </a>
     </div>
 
@@ -245,7 +249,7 @@
 
               <!-- Hero Action Buttons -->
               <div class="hero-cta-group reveal-on-scroll" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
-                <a href="#coursesSection" class="btn-hero-primary">
+                <a href="/courses" class="btn-hero-primary">
                   <span>EXPLORE HEDZO TRADING COURSES</span>
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -968,12 +972,12 @@
           <div class="col-6 col-md-3 col-lg-2">
             <div class="footer-col-heading">Quick Links</div>
             <ul class="footer-link-list">
-              <li class="footer-link-item"><a href="#heroSection">Home</a></li>
-              <li class="footer-link-item"><a href="#aboutSection">About Hedzo</a></li>
-              <li class="footer-link-item"><a href="#coursesSection">Hedzo Courses</a></li>
-              <li class="footer-link-item"><a href="#whyHedzoSection">Why Hedzo</a></li>
-              <li class="footer-link-item"><a href="#programsSection">Hedzo Batches</a></li>
-              <li class="footer-link-item"><a href="#contactSection">Contact Hedzo</a></li>
+              <li class="footer-link-item"><a href="/">Home</a></li>
+              <li class="footer-link-item"><a href="/about">About Hedzo</a></li>
+              <li class="footer-link-item"><a href="/courses">Hedzo Courses</a></li>
+              <li class="footer-link-item"><a href="/why-hedzo">Why Hedzo</a></li>
+              <li class="footer-link-item"><a href="/faqs">FAQs</a></li>
+              <li class="footer-link-item"><a href="/contact">Contact Hedzo</a></li>
             </ul>
           </div>
 
@@ -981,11 +985,11 @@
           <div class="col-6 col-md-3 col-lg-3">
             <div class="footer-col-heading">Hedzo Education</div>
             <ul class="footer-link-list">
-              <li class="footer-link-item"><a href="#coursesSection">Stock Market Trading Course</a></li>
-              <li class="footer-link-item"><a href="#coursesSection">Smart Money Concepts (SMC)</a></li>
-              <li class="footer-link-item"><a href="#coursesSection">Technical Analysis Masterclass</a></li>
-              <li class="footer-link-item"><a href="#coursesSection">Futures &amp; Options Strategies</a></li>
-              <li class="footer-link-item"><a href="#coursesSection">Financial Market Risk Management</a></li>
+              <li class="footer-link-item"><a href="/courses">Stock Market Trading Course</a></li>
+              <li class="footer-link-item"><a href="/courses">Smart Money Concepts (SMC)</a></li>
+              <li class="footer-link-item"><a href="/courses">Technical Analysis Masterclass</a></li>
+              <li class="footer-link-item"><a href="/courses">Futures &amp; Options Strategies</a></li>
+              <li class="footer-link-item"><a href="/courses">Financial Market Risk Management</a></li>
             </ul>
           </div>
 
@@ -994,7 +998,12 @@
             <div class="footer-col-heading">Contact &amp; Socials</div>
             <ul class="footer-link-list">
               <li class="footer-link-item">
-                <a href="tel:+917075802907">+91 7075802907</a>
+                <a href="tel:+917075802907" class="d-inline-flex align-items-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                  <span>+91 7075802907</span>
+                </a>
               </li>
               <li class="footer-link-item">
                 <a href="mailto:hedzoacademy@gmail.com">hedzoacademy@gmail.com</a>
