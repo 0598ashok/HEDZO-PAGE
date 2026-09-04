@@ -239,93 +239,6 @@ body {
   100% { transform: scale(2.4); opacity: 0; }
 }
 
-/* 6. Market Ticker Tape (Knowledge & Market Pulse) */
-.market-ticker-wrapper {
-  width: 100%;
-  overflow: hidden;
-  background: rgba(8, 12, 24, 0.6);
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-  padding: 0.6rem 0;
-  white-space: nowrap;
-  position: relative;
-}
-
-.market-ticker-wrapper::before,
-.market-ticker-wrapper::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 60px;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.market-ticker-wrapper::before {
-  left: 0;
-  background: linear-gradient(to right, var(--bg-dark-primary), transparent);
-}
-
-.market-ticker-wrapper::after {
-  right: 0;
-  background: linear-gradient(to left, var(--bg-dark-primary), transparent);
-}
-
-.ticker-track,
-.market-ticker-track {
-  display: inline-flex;
-  gap: 2.5rem;
-  animation: tickerSlide 38s linear infinite;
-}
-
-.ticker-track:hover,
-.market-ticker-track:hover {
-  animation-play-state: paused;
-}
-
-.ticker-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  color: var(--text-muted);
-  flex-shrink: 0;
-}
-
-.ticker-item .symbol,
-.ticker-item .ticker-symbol {
-  color: var(--text-white);
-  font-weight: 700;
-}
-
-.ticker-item .bull-val,
-.ticker-item .ticker-val.up {
-  color: var(--accent-neon);
-}
-
-.ticker-item .bear-val,
-.ticker-item .ticker-val.down {
-  color: var(--bear-coral);
-}
-
-.ticker-item .badge-tag {
-  background: rgba(0, 255, 136, 0.1);
-  color: var(--accent-neon);
-  padding: 0.15rem 0.5rem;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  border: 1px solid rgba(0, 255, 136, 0.25);
-}
-
-@keyframes tickerSlide {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
 /* 7. Hero Section */
 .hero-section {
   padding: 4.5rem 0 3.5rem;
@@ -2451,17 +2364,6 @@ body {
   }
   .mobile-nav-drawer {
     top: 58px;
-  }
-
-  /* Market Ticker */
-  .market-ticker-wrapper {
-    padding: 0.45rem 0;
-  }
-  .ticker-track {
-    gap: 1.75rem;
-  }
-  .ticker-item {
-    font-size: 0.72rem;
   }
 
   /* Hero Section */

@@ -511,8 +511,8 @@ document.addEventListener('DOMContentLoaded', () => {
           </svg>
           <span>Enquiry Submitted!</span>
         `;
-        showContactFeedback('Thank you for reaching out! Our advisory desk will get back to you shortly.', 'success');
-        showToast('Enquiry Received', `Thank you ${name}. Our Hedzo mentorship advisory desk will contact you within 24 hours.`);
+        showContactFeedback('Thank you for reaching out! Our admissions team will get back to you shortly.', 'success');
+        showToast('Enquiry Received', `Thank you ${name}. Our Hedzo mentorship admissions team will contact you within 24 hours.`);
         
         // Reset form
         contactForm.reset();
